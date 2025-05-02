@@ -10,7 +10,9 @@ class Program
         while (number != 0){
             Console.Write("Enter a number: ");
             number = int.Parse(Console.ReadLine());
-            numberlist.Add(number);
+            if (number != 0){
+                numberlist.Add(number);
+            }
         }
         int sum = 0;
         int highestnum = 0;
