@@ -24,7 +24,7 @@ class Program
         }
         Console.WriteLine($"The sum is {sum}");
         Console.WriteLine($"The average value was {sum/numberlist.Count}");
-        Console.WriteLine($"The highest number was {highestnum}");
+        Console.WriteLine($"The highest number was {highestnum}!");
     }
-
+// test
     }
