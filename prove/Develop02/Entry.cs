@@ -1,23 +1,22 @@
-using System.Dynamic;
-using System.IO;
+using System;
 
 public class Entry
 {
-    List<string> _entries = new List<string>();
-
-    public List<string> GetEntry(List<string> _entries = null)
+    public string Prompt { get; set; }
+    public string Response { get; set; }
+    public DateTime Date { get; set; }
+    
+    public Entry(string prompt, string response)
     {
-        if (_entries == null)
-        {
-            _entries = new List<string>();
-        }
-        Console.Write("");
-        string entry = Console.ReadLine();
-        DateTime mydate = new DateTime();
-        _entries.Add($"{mydate.Day}/{mydate.Month}/{mydate.Year}");
-        _entries.Add(entry);
-        return _entries;
-    }    
+        Prompt = prompt;
+        Response = response;
+        Date = DateTime.Now;
+    }
+
+    public override string ToString()
+    {
+        return $"{Date.ToShortDateString()} - {Prompt}\n{Response}\n";
+    }
 }
 
 
