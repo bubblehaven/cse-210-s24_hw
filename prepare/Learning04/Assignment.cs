@@ -1,3 +1,5 @@
+using System.Dynamic;
+
 public class Assignment
 {
     private string _studentname;
@@ -7,6 +9,10 @@ public class Assignment
     {
         _studentname = name;
         _topic = topic;
+    }
+    public string GetStudentName()
+    {
+        return _studentname;
     }
     public string GetSummary()
     {
