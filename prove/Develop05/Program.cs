@@ -15,7 +15,7 @@ class Program
         {
             tracker.CheckLevel();
 
-            Console.WriteLine($"ADVENTURES IN GOALING     lvl: {tracker.GetLevel()}");
+            Console.WriteLine($"ADVENTURES IN GOALING     lvl: {tracker.GetLevel()} xp: {tracker.GetPoints()}");
             Console.Write("1.New Goal\n2.View Goals\n3.Save\n4.Load\n5.Quit\n ");
             bool success = int.TryParse(Console.ReadLine(), out int choice);
             if (success && choice < 7 && choice > 0)

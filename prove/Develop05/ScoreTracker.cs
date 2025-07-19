@@ -108,4 +108,26 @@ public class ScoreTracker
         }
 
     }
+    public string GetRenown()
+    {
+        if (_level < 5)
+        {
+            return "Small Town Chump";
+        }
+        else if (_level < 10)
+        {
+            return "Rising Goaler";
+        }
+        else if (_level < 15)
+        {
+            return "Fearless Goal Completer";
+        }
+        else if (_level < 20)
+        {
+            return "Gofer";
+        }
+        else {
+            return "Heroic Errand Boy";
+        }
+    }
 }
