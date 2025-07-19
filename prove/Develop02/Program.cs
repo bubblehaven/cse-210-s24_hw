@@ -14,6 +14,7 @@ class Program
         bool journalOpen = true;
         while (journalOpen == true)
         {
+            Console.Clear();
             Console.WriteLine("1. Write\n2. Display\n3. Load\n4. Save\n5. Exit");
             Console.WriteLine("What would you like to do?");
             int options = int.Parse(Console.ReadLine());
@@ -22,17 +23,15 @@ class Program
                 //grabs a prompt and holds reply
                 string prompt1 = Prompt.GetPrompt();
                 Console.WriteLine($"{prompt1}");
-                Console.Write(" ");
                 string response = Console.ReadLine();
-                
+
                 //create entry and add to list
                 Entry newEntry = new Entry(prompt1, response);
                 entries.Add(newEntry);
-                Console.WriteLine("Entry saved!");
             }
             else if (options == 2)//display
             {
-                
+
                 if (entries.Count == 0)
                 {
                     Console.WriteLine("No entries to display.");
@@ -42,9 +41,11 @@ class Program
                     Console.WriteLine("\n--- Your Journal Entries ---");
                     foreach (Entry entry in entries)
                     {
-                        Console.WriteLine(entry.ToString());
+                        Console.WriteLine(entry.DisplayEntry());
                     }
                 }
+                Console.WriteLine("Press Enter to continue");
+                Console.ReadLine();
             }
             else if (options == 3)
             {
@@ -64,11 +65,6 @@ class Program
             }
 
         }
-
-        // Prompt p = new Prompt();
-
-            // string prompt = p.GetPrompt();
-            // Console.WriteLine(prompt);
 
     }
 }

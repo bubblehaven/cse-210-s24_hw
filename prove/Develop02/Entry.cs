@@ -2,20 +2,31 @@ using System;
 
 public class Entry
 {
-    public string Prompt { get; set; }
-    public string Response { get; set; }
-    public DateTime Date { get; set; }
+    private string _prompt;
+    private string _response;
+    private DateTime _date;
     
     public Entry(string prompt, string response)
     {
-        Prompt = prompt;
-        Response = response;
-        Date = DateTime.Now;
+        _prompt = prompt;
+        _response = response;
+        _date = DateTime.Now;
+    }
+     public Entry(string prompt, string response,string date)
+    {
+        _prompt = prompt;
+        _response = response;
+        _date = DateTime.Parse(date);
+    }
+    public string StoreEntry()
+    {
+        return $"{_prompt},{_response},{_date}";
     }
 
-    public override string ToString()
+
+    public string DisplayEntry()
     {
-        return $"{Date.ToShortDateString()} - {Prompt}\n{Response}\n";
+        return $"{_date} - {_prompt}\n{_response}\n";
     }
 }
 
