@@ -3,7 +3,7 @@ using System.Dynamic;
 using System.Runtime.InteropServices;
 using System.Transactions;
 
-class Program // In
+class Program // Exceeds requirements: Leveling based on point gain and 4 goofily(I hope) named renown tiers. 
 {
 
 
