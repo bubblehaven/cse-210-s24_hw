@@ -23,7 +23,7 @@ class Program
                 Console.Clear();
                 if (choice == 1)
                 {
-                    Console.Write("1. One Time Goal\n2. Repeated Goal\n3.Eternal Goal\n4. Back");
+                    Console.Write("1. One Time Goal\n2. Repeated Goal\n3.Eternal Goal\n4. Back\n");
                     bool success2 = int.TryParse(Console.ReadLine(), out int choice2);
                     if (success2 && choice2 <= 3 && choice2 >= 1)
                     {
@@ -68,6 +68,7 @@ class Program
                     {
                         Console.Write($"{i + 1}: ");
                         list[i].DisplayGoal();
+                        Console.WriteLine();
                     }
                     int choice3 = GetValidatedInt("Select goal to complete, or 0 to exit: ");
                     if (choice3 != 0 && choice3 <= list.Count())
@@ -90,7 +91,16 @@ class Program
                 {
                     Console.Write("Enter file name: ");
                     sl.SetFileName(Console.ReadLine());
-                    sl.LoadFile(tracker,list);
+                    try
+                    {
+                        sl.LoadFile(tracker, list);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Something went wrong: {ex.Message}\n");
+                        Console.WriteLine("Press enter to continue");
+                        Console.ReadLine();
+                    }
                 }
                 else if (choice == 5)
                 {

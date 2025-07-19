@@ -6,7 +6,7 @@ public class EternalGoal : Goal
     { }
     public override string StoreGoal()
     {
-        return $"e,{GetName},{GetDescription},{GetPointGain}";
+        return $"e,{GetName()},{GetDescription()},{GetPointGain()}";
     }
     public override void DisplayGoal()
     {

@@ -12,6 +12,14 @@ public class Goal
         _name = name;
         _description = description;
         _pointGain = pointGain;
+        _isComplete = false;
+    }
+    public Goal(string name, string description, int pointGain,bool isComplete)
+    {
+        _name = name;
+        _description = description;
+        _pointGain = pointGain;
+        _isComplete = isComplete;
     }
     public int GetPointGain()
     {

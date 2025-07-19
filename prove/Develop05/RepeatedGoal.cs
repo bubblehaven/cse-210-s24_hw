@@ -12,7 +12,7 @@ public class RepeatedGoal : Goal
         _totalCompletionPoints = totalCompletionPoints;
         _currentCompletions = 0;
     }
-    public RepeatedGoal(string name, string description, int pointGain, int currentCompletions, int totalCompletions, int totalCompletionPoints) : base(name, description, pointGain)
+    public RepeatedGoal(string name, string description, int pointGain, int currentCompletions, int totalCompletions, int totalCompletionPoints,bool isComplete) : base(name, description, pointGain, isComplete)
     {
         _totalCompletions = totalCompletions;
         _totalCompletionPoints = totalCompletionPoints;
@@ -20,7 +20,7 @@ public class RepeatedGoal : Goal
     }
     public override string StoreGoal()
     {
-        return $"r,{GetName()},{GetDescription()},{GetPointGain()},{_currentCompletions},{_totalCompletions},{_totalCompletionPoints}";
+        return $"r,{GetName()},{GetDescription()},{GetPointGain()},{_currentCompletions},{_totalCompletions},{_totalCompletionPoints},{GetIsComplete()}";
     }
     public override void GoalComplete(ScoreTracker Tracker)
     {

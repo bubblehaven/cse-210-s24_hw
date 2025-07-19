@@ -26,7 +26,7 @@ public class SaveLoad
             }
         }
     }
-    public List<Goal> LoadFile(ScoreTracker tracker, List<Goal> goals)
+    public void LoadFile(ScoreTracker tracker, List<Goal> goals)
     {
         string[] lines = System.IO.File.ReadAllLines(_fileName);
         foreach (string line in lines)
@@ -35,7 +35,7 @@ public class SaveLoad
             Goal goal = null;
             if (parts[0] == "g")
             {
-                goal = new Goal(parts[1], parts[2], int.Parse(parts[3]));
+                goal = new Goal(parts[1], parts[2], int.Parse(parts[3]),bool.Parse(parts[4]));
             }
             else if (parts[0] == "e")
             {
@@ -43,7 +43,7 @@ public class SaveLoad
             }
             else if (parts[0] == "r")
             {
-                goal = new RepeatedGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[5]), int.Parse(parts[4]), int.Parse(parts[6]));
+                goal = new RepeatedGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]),bool.Parse(parts[7]));
             }
             else if (parts[0] == "score")
             {
@@ -55,7 +55,6 @@ public class SaveLoad
                     goals.Add(goal);
                 }
         }
-        return goals;
 
     }
 }
