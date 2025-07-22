@@ -10,6 +10,7 @@ public class Address
         _streetAddress = streetAddress;
         _city = city;
         _state = state;
+        _country = country;
         if (country == "USA")
         {
             _isUSA = true;
